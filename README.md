@@ -40,6 +40,7 @@ Call script mn.sh with parameter
 * pid     - return pid dashd and mnservice
 * log     - list mnservice logfile
 
+
     ./mn.sh on
     ./mn.sh log
     
