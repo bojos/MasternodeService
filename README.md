@@ -1,6 +1,6 @@
 # MasternodeService
 
-DASH masternode service - version 0.1.0
+DASH masternode service - version 0.1.1
 
 * Starts dashd daemon
 * Checks his run and if it crashes, then starts again
@@ -24,7 +24,6 @@ You must change these variables for your computer
     
     export IP=xx.xx.xx.xx               #IP masternode
     export WORK_DIR=$HOME               #dashd ,dash-cli directory
-    export DASH_DIR=$HOME/.dash         #dash data directory
     export BIN_DIR=$HOME/mnservice/bin  #mnservice program directory
 
     
@@ -41,10 +40,6 @@ Call script mn.sh with parameter
 * pid     - return pid dashd and mnservice
 * log     - list mnservice logfile
 
-warning : If dashd running, you must first stop it
-    
-    ./dash-cli stop
-    cd ....
     ./mn.sh on
     ./mn.sh log
     
@@ -60,3 +55,8 @@ Proper log looks like this
     
 * python3
 * dashd, dash-cli 0.12.*    
+
+## Versions
+
+### 0.1.1 
+- independent of file .dash/dashd.pid

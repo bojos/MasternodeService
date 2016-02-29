@@ -8,8 +8,10 @@ import daemon
 
 def get_dashd_pid():
     try:
-        with open(dashd_pidfile, 'r') as f:
-            return int(f.read().strip())
+#        with open(dashd_pidfile, 'r') as f:
+#            return int(f.read().strip())
+        ll = check_output(["pidof", "dashd"]).split()
+        return int(ll[0])
     except Exception:
         return 0
 
@@ -69,14 +71,14 @@ if __name__ == '__main__':
 	implementation.
 	"""
     usage = 'Missing parameter, usage of test logic:\n' + \
-            ' % python3 mnservice.py start|stop dash_daemon_directory dashd_pidfile\n'
+            ' % python3 mnservice.py start|stop dash_daemon_directory\n'
     if len(sys.argv) < 3:
         sys.stderr.write(usage)
         sys.exit(2)
 
     pidfile = '/tmp/mnservice.pid'
     logfile = '/tmp/mnservice.log'
-    dashd_pidfile = sys.argv[3]
+#    dashd_pidfile = sys.argv[3]
 
     dc = daemon.daemon_ctl(DaemonDashd, pidfile, sys.argv[2])
 
