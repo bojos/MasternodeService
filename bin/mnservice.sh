@@ -1,19 +1,19 @@
 #!/bin/sh
 
-SERV_VER=1.0
+SERV_VER=0.1.1
 
 case "$1" in
     on )
     #Starting dashd and mnservice
         $WORK_DIR/dashd && sleep 2
-        python3 $BIN_DIR/mnservice.py start $WORK_DIR $DASH_DIR/dashd.pid
+        python3 $BIN_DIR/mnservice.py start $WORK_DIR
         echo "waiting for information ..."
         sleep 40
         $0 info
     ;;
     off )
     #stop mnservice and dashd
-        python3 $BIN_DIR/mnservice.py stop $WORK_DIR $DASH_DIR/dashd.pid
+        python3 $BIN_DIR/mnservice.py stop $WORK_DIR
         $WORK_DIR/dash-cli stop
     ;;
     re )
@@ -42,7 +42,7 @@ case "$1" in
     pid )
     #dashd and mnservice pid
         echo "dashd pid"
-        pgrep dashd
+        pidof dashd
         echo "mnservice pid"
         cat /tmp/mnservice.pid
     ;;
