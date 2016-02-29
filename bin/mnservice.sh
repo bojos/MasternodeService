@@ -28,22 +28,22 @@ case "$1" in
     ;;
     info )
     #information about masternode
-        echo -e "\e[36mdash-cli getinfo\e[0m"
+        echo "dash-cli getinfo"
         $WORK_DIR/dash-cli getinfo
         sleep 1
-        echo -e "\e[36mdash-cli masternode status\e[0m"
+        echo "dash-cli masternode status"
         $WORK_DIR/dash-cli masternode status
         sleep 1
-        echo -e "\e[36mdash-cli masternode list full| grep $IP\e[0m"
+        echo "dash-cli masternode list full| grep $IP"
         echo
         $WORK_DIR/dash-cli masternode list full| grep $IP
         echo "--------------------------------------------"
     ;;
     pid )
     #dashd and mnservice pid
-        echo -e "\e[36mdash pid\e[0m"
+        echo "dashd pid"
         pgrep dashd
-        echo -e "\e[36mnservice pid\e[0m"
+        echo "mnservice pid"
         cat /tmp/mnservice.pid
     ;;
     log )
@@ -52,7 +52,7 @@ case "$1" in
     ;;
     help )
         echo "----------------------------------------"
-        echo -e "\e[36mService masternode - v$SERV_VER by bojos\e[0m"
+        echo "Service masternode - v$SERV_VER by bojos"
         echo "----------------------------------------"
         echo "eg: $0 on|off|re|up|info|pid|log"
         echo "..........................................."
