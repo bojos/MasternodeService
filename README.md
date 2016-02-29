@@ -40,11 +40,10 @@ Call script mn.sh with parameter
 * pid     - return pid dashd and mnservice
 * log     - list mnservice logfile
 
-
-    ./mn.sh on
-    ./mn.sh log
-    
+   
 Proper log looks like this
+
+    ./mn.sh log
 
     2016-02-29 15:41:29 ................................
     2016-02-29 15:41:29 >> mnservice run - pid = 6155
