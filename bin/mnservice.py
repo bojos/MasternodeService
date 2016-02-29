@@ -23,15 +23,6 @@ def is_executed_pid(name, pid):
     except:
         return False
 
-def kill_all(name):
-    try:
-        ll = check_output(["pidof", name]).split()
-        for id in ll[:]:
-            os.system('kill -9 ' + int(id))
-        return
-    except:
-        pass
-
 def write_log(msg):
     try:
         with open(logfile, 'a+') as f:
