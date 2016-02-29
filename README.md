@@ -34,12 +34,12 @@ Call script mn.sh with parameter
     
 "eg: ./mn.sh on|off|re|info|pid|log"
 
-*on      - start dashd and mnservice
-*off     - close mnservice and dashd
-*re      - restart dashd
-*info    - information about masternode
-*pid     - return pid dashd and mnservice
-*log     - list mnservice logfile
+* on      - start dashd and mnservice
+* off     - close mnservice and dashd
+* re      - restart dashd
+* info    - information about masternode
+* pid     - return pid dashd and mnservice
+* log     - list mnservice logfile
 
 warning : If dashd running, you must first stop it
     
@@ -58,5 +58,5 @@ Proper log looks like this
     
 # Dependencies
     
-*python3
-*dashd, dash-cli 0.12.*    
+* python3
+* dashd, dash-cli 0.12.*    
