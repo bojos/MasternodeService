@@ -1,6 +1,6 @@
 # MasternodeService
 
-DASH masternode service - version 0.1.1
+DASH masternode service - version 0.1.2
 
 * Starts dashd daemon
 * Checks his run and if it crashes, then starts again
@@ -40,6 +40,7 @@ Call script mn.sh with parameter
 * pid     - return pid dashd and mnservice
 * log     - list mnservice logfile
 
+warning : If dashd running, you must first stop it
    
 Proper log looks like this
 
@@ -60,3 +61,6 @@ Proper log looks like this
 
 ### 0.1.1 
 - independent of file .dash/dashd.pid
+
+### 0.1.2 
+- bug - double start dashd

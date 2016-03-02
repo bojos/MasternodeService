@@ -1,14 +1,15 @@
 #!/bin/bash
 
-SERV_VER=0.1.1
+SERV_VER=0.1.2
 
 case "$1" in
     on )
     #Starting dashd and mnservice
-        $WORK_DIR/dashd && sleep 2
+        PID_DASHD=`pidof dashd`
+        [ -z  "$PID_DASHD" ] && $WORK_DIR/dashd && sleep 2
         python3 $BIN_DIR/mnservice.py start $WORK_DIR
         echo "waiting for information ..."
-        sleep 40
+        [ -z  "$PID_DASHD" ] && sleep 40
         $0 info
     ;;
     off )
@@ -52,7 +53,7 @@ case "$1" in
     ;;
     help )
         echo "----------------------------------------"
-        echo "Service masternode - v$SERV_VER by bojos"
+        echo - e "Service masternode - v$SERV_VER by bojos"
         echo "----------------------------------------"
         echo "eg: $0 on|off|re|up|info|pid|log"
         echo "..........................................."
